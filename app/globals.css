@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --pt-navy: #050b18;
+  --pt-navy-2: #0a1228;
+  --pt-blue: #2b67d9;
+  --pt-mint: #76d4a5;
+  --pt-text: #f4f6fb;
+  --pt-muted: #94a3b8;
+}
+
+@theme inline {
+  --color-pt-navy: var(--pt-navy);
+  --color-pt-navy-2: var(--pt-navy-2);
+  --color-pt-blue: var(--pt-blue);
+  --color-pt-mint: var(--pt-mint);
+  --color-pt-text: var(--pt-text);
+  --color-pt-muted: var(--pt-muted);
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--pt-navy);
+  color: var(--pt-text);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.bg-grid-pattern {
+  background-image: linear-gradient(
+      to right,
+      rgba(43, 103, 217, 0.06) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgba(43, 103, 217, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-network-radial {
+  background: radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      rgba(43, 103, 217, 0.25),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 60% 40% at 100% 50%,
+      rgba(118, 212, 165, 0.12),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 50% 30% at 0% 80%,
+      rgba(43, 103, 217, 0.15),
+      transparent 45%
+    );
+}
+
+.text-gradient-brand {
+  background: linear-gradient(120deg, #2b67d9 0%, #4f8dff 45%, #76d4a5 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.btn-gradient {
+  background: linear-gradient(120deg, #2b67d9 0%, #3d7ef0 50%, #76d4a5 100%);
+}
+
+.pill-glow {
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.5),
+    0 0 24px rgba(43, 103, 217, 0.45), 0 0 48px rgba(43, 103, 217, 0.2);
+}
