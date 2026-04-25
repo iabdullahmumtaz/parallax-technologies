@@ -12,10 +12,39 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteName = "Parallax Technologies";
+
 export const metadata: Metadata = {
-  title: "Parallax Technologies | Digital Solutions",
+  metadataBase: new URL("https://parallax.tech"),
+  title: {
+    default: `${siteName} | Digital Solutions`,
+    template: `%s | ${siteName}`,
+  },
   description:
-    "Parallax Technologies builds intelligent digital solutions—AI, cloud, web, and DevOps—for modern businesses.",
+    "Parallax Technologies is your partner for intelligent digital solutions—AI, cloud, web applications, and DevOps—for modern businesses.",
+  applicationName: siteName,
+  keywords: [
+    "Parallax Technologies",
+    "software development",
+    "web applications",
+    "AI",
+    "cloud",
+    "DevOps",
+    "digital agency",
+  ],
+  openGraph: {
+    type: "website",
+    siteName,
+    title: `${siteName} | Digital Solutions`,
+    description:
+      "We build intelligent digital solutions—web, cloud, AI, and DevOps—for teams that need reliable delivery.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteName} | Digital Solutions`,
+    description:
+      "Intelligent digital solutions for modern businesses—web, cloud, AI, and DevOps.",
+  },
 };
 
 export default function RootLayout({
