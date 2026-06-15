@@ -2,7 +2,6 @@
 
 import { Mail, MapPin, Phone } from "lucide-react";
 import { motion } from "framer-motion";
-import { BookDemoPanel } from "./BookDemoPanel";
 import { ContactForm } from "./ContactForm";
 import { Reveal } from "./Reveal";
 import { SiteFooter } from "./SiteFooter";
@@ -29,16 +28,15 @@ const cards = [
 
 export function ContactSection() {
   return (
-    <div id="contact" className="scroll-mt-24 border-t border-white/5 bg-pt-navy">
+    <div id="contact" className="scroll-mt-24 border-t border-white/5 bg-pt-navy/90">
       <section className="relative overflow-hidden py-20 sm:py-24">
         <div
-          className="pointer-events-none absolute left-0 top-0 h-[min(60%,420px)] w-[min(100%,520px)] -translate-x-1/4 rounded-full bg-pt-blue/12 blur-[100px]"
+          className="pointer-events-none absolute left-1/2 top-1/3 h-[420px] w-[520px] -translate-x-1/2 rounded-full bg-pt-blue/15 blur-[120px]"
           aria-hidden
         />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <BookDemoPanel />
           <Reveal className="text-center" y={20}>
-            <span className="inline-block rounded-full border border-pt-mint/40 bg-pt-mint/5 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-pt-mint shadow-[0_0_28px_-6px_rgba(121,216,165,0.35)]">
+            <span className="inline-block rounded-full border border-pt-mint/50 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-pt-mint">
               Get in touch
             </span>
             <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl md:text-5xl">
@@ -49,7 +47,8 @@ export function ContactSection() {
               out and let&apos;s discuss your project.
             </p>
           </Reveal>
-          <div className="mt-14 grid gap-10 lg:grid-cols-3">
+
+          <div className="mt-14 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.65fr)] lg:items-start">
             <motion.div
               className="flex flex-col gap-4"
               variants={staggerContainer}
@@ -65,30 +64,29 @@ export function ContactSection() {
                     y: -4,
                     transition: { duration: 0.22, ease: ptEase },
                   }}
-                  className="group flex gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition duration-300 hover:border-pt-blue/40 hover:bg-white/[0.07] hover:shadow-[0_16px_48px_-20px_rgba(49,100,211,0.4)]"
+                  className="group flex gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm transition duration-300 hover:border-pt-blue/35 hover:bg-white/[0.06] hover:shadow-[0_16px_48px_-20px_rgba(49,100,211,0.35)]"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-pt-blue to-cyan-400/90 shadow-lg shadow-pt-blue/25 transition duration-300 group-hover:scale-110 group-hover:shadow-pt-blue/45">
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-pt-blue to-pt-mint shadow-md shadow-pt-blue/30 transition duration-300 group-hover:scale-105">
                     <c.icon className="h-5 w-5 text-white" aria-hidden />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="font-semibold text-white">{c.title}</p>
                     {"href" in c && c.href ? (
                       <a
                         href={c.href}
-                        className="text-sm text-pt-muted transition hover:text-pt-mint"
+                        className="mt-0.5 block truncate text-sm text-pt-muted transition hover:text-pt-mint"
                       >
                         {c.detail}
                       </a>
                     ) : (
-                      <p className="text-sm text-pt-muted">{c.detail}</p>
+                      <p className="mt-0.5 text-sm text-pt-muted">{c.detail}</p>
                     )}
                   </div>
                 </motion.div>
               ))}
             </motion.div>
-            <div className="lg:col-span-2">
-              <ContactForm />
-            </div>
+
+            <ContactForm />
           </div>
         </div>
       </section>

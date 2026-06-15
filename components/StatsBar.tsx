@@ -12,7 +12,7 @@ const stats = [
 
 export function StatsBar() {
   return (
-    <section className="relative overflow-hidden border-t border-white/10 bg-black py-14 sm:py-16">
+    <section className="relative overflow-hidden border-t border-white/10 bg-black/88 py-14 sm:py-16">
       <div
         className="pointer-events-none absolute inset-0 bg-[linear-gradient(105deg,transparent_40%,rgba(49,100,211,0.06)_50%,transparent_60%)]"
         aria-hidden

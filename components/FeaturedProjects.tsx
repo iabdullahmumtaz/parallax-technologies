@@ -89,8 +89,8 @@ export function FeaturedProjects() {
             <motion.article
               key={p.title}
               variants={item}
-              whileHover={{ y: -6, transition: { duration: 0.25, ease: ptEase } }}
-              className="group overflow-hidden rounded-2xl bg-white shadow-lg shadow-slate-200/90 ring-1 ring-slate-200/60 transition-shadow duration-300 hover:shadow-2xl hover:shadow-blue-200/50 hover:ring-blue-200/80"
+              whileHover={{ y: -8, transition: { duration: 0.28, ease: ptEase } }}
+              className="saas-card-hover group overflow-hidden rounded-2xl bg-white shadow-lg shadow-slate-200/90 ring-1 ring-slate-200/60 transition-shadow duration-300 hover:shadow-2xl hover:shadow-blue-200/55 hover:ring-blue-200/80"
             >
               <div
                 className={`relative h-44 bg-gradient-to-br ${p.gradient} transition duration-500 group-hover:brightness-110`}

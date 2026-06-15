@@ -19,7 +19,7 @@ export function TechStack() {
   return (
     <section
       id="technology"
-      className="relative scroll-mt-24 overflow-hidden border-t border-white/5 bg-pt-navy py-20 sm:py-24"
+      className="relative scroll-mt-24 overflow-hidden border-t border-white/5 bg-pt-navy/90 py-20 sm:py-24"
     >
       <div
         className="pointer-events-none absolute right-0 top-1/2 h-[420px] w-[420px] -translate-y-1/2 translate-x-1/3 rounded-full bg-pt-blue/15 blur-[100px]"
@@ -51,9 +51,11 @@ export function TechStack() {
               variants={staggerItem}
               whileHover={{
                 y: -6,
-                transition: { duration: 0.22, ease: ptEase },
+                rotate: -2,
+                scale: 1.02,
+                transition: { duration: 0.28, ease: ptEase },
               }}
-              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition-colors duration-300 hover:border-pt-blue/50 hover:bg-white/[0.08] hover:shadow-[0_20px_50px_-24px_rgba(49,100,211,0.45)]"
+              className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition-colors duration-300 hover:border-pt-blue/50 hover:bg-white/[0.08] hover:shadow-[0_20px_50px_-24px_rgba(49,100,211,0.55)]"
             >
               <div
                 className="pointer-events-none absolute -left-6 -top-6 h-24 w-24 rounded-full bg-pt-blue/20 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100"

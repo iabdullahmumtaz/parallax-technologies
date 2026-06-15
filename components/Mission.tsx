@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { AboutOrbitVisual } from "./AboutOrbitVisual";
 import { ptEase } from "@/lib/motion";
 
 const features = [
@@ -35,15 +36,19 @@ const features = [
 
 export function Mission() {
   return (
-    <section className="relative overflow-hidden border-t border-white/5 py-20 sm:py-24">
+    <section
+      id="about"
+      className="relative scroll-mt-24 overflow-hidden border-t border-white/5 bg-pt-navy/90 py-20 sm:py-24"
+    >
       <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-40" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div className="grid gap-12 lg:grid-cols-2 lg:items-start">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.55, ease: ptEase }}
+            className="lg:pt-2"
           >
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-pt-mint/40 bg-pt-mint/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-pt-mint">
               <span className="h-1.5 w-1.5 rounded-full bg-pt-mint shadow-[0_0_8px_#79d8a5]" />
@@ -64,29 +69,24 @@ export function Mission() {
             </p>
             <Link
               href="#contact"
-              className="mt-8 inline-flex rounded-full px-8 py-3 text-sm font-semibold text-white btn-gradient shadow-lg shadow-pt-blue/25 transition duration-300 hover:scale-[1.03] hover:shadow-xl hover:shadow-pt-blue/35 active:scale-[0.98]"
+              className="mt-8 inline-flex rounded-full px-8 py-3 text-sm font-semibold text-white btn-gradient shadow-lg shadow-pt-blue/25 transition duration-300 hover:scale-[1.04] hover:shadow-xl hover:shadow-pt-blue/40 active:scale-[0.98]"
             >
-              Let&apos;s work together
+              Let&apos;s Work Together
             </Link>
           </motion.div>
-          <div className="relative">
+
+          <div className="flex flex-col items-center lg:items-end">
             <motion.div
-              className="mb-8 flex justify-center lg:justify-end"
-              initial={{ opacity: 0, scale: 0.92 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              className="mb-8 flex w-full justify-center lg:justify-end"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: ptEase }}
+              transition={{ duration: 0.55, ease: ptEase }}
             >
-              <div className="relative">
-                <div className="absolute -inset-6 rounded-3xl bg-pt-blue/20 blur-3xl motion-safe:animate-hero-glow" />
-                <div className="relative flex h-36 w-36 rotate-12 items-center justify-center rounded-2xl border border-pt-blue/40 bg-gradient-to-br from-pt-blue to-pt-navy-2 shadow-2xl shadow-pt-blue/40 transition duration-500 hover:rotate-6 hover:shadow-[0_0_48px_-8px_rgba(49,100,211,0.55)]">
-                  <span className="text-lg font-bold text-white">Cloud</span>
-                </div>
-                <div className="absolute -right-2 -top-2 h-3 w-3 rounded-full bg-pt-blue shadow-[0_0_12px_#3164d3]" />
-                <div className="absolute -bottom-1 left-4 h-2 w-2 rounded-full bg-pt-mint/80" />
-              </div>
+              <AboutOrbitVisual />
             </motion.div>
-            <div className="grid grid-cols-2 gap-4">
+
+            <div className="grid w-full max-w-xl grid-cols-2 gap-4 lg:max-w-none">
               {features.map((f, i) => (
                 <motion.div
                   key={f.title}

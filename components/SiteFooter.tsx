@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Code2, Globe, Mail, MessageCircle } from "lucide-react";
+import { Code2, Link2, Mail, Share2 } from "lucide-react";
 import { Logo } from "./Logo";
 import { ptEase, staggerContainer, staggerItem } from "@/lib/motion";
 
@@ -17,6 +17,7 @@ const serviceLinks = [
 ];
 
 const companyLinks: { label: string; href: string }[] = [
+  { label: "About Us", href: "#about" },
   { label: "Portfolio", href: "#projects" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
@@ -29,6 +30,13 @@ const resourceLinks: { label: string; href: string }[] = [
 
 const linkClass =
   "inline-flex text-sm text-pt-muted transition duration-200 hover:translate-x-0.5 hover:text-white";
+
+const socialLinks = [
+  { Icon: Share2, label: "Share", href: "#" },
+  { Icon: Link2, label: "LinkedIn", href: "#" },
+  { Icon: Code2, label: "GitHub", href: "#" },
+  { Icon: Mail, label: "Email", href: `mailto:${CONTACT_EMAIL}` },
+];
 
 export function SiteFooter() {
   return (
@@ -62,33 +70,19 @@ export function SiteFooter() {
               </div>
             </motion.div>
             <p className="mt-4 text-sm leading-relaxed text-pt-muted">
-              Parallax Technologies builds intelligent digital solutions that
-              transform businesses through innovation, design, and reliable
-              engineering.
+              Building intelligent digital solutions that transform businesses
+              through innovation and technology.
             </p>
             <div className="mt-6 flex gap-3">
-              {[
-                {
-                  Icon: Mail,
-                  label: "Email Parallax Technologies",
-                  href: `mailto:${CONTACT_EMAIL}`,
-                },
-                { Icon: Globe, label: "Home", href: "/" },
-                {
-                  Icon: Code2,
-                  label: "Portfolio section",
-                  href: "#projects",
-                },
-                {
-                  Icon: MessageCircle,
-                  label: "Contact",
-                  href: "#contact",
-                },
-              ].map(({ Icon, label, href }) => (
-                <motion.span key={label} whileHover={{ scale: 1.08, y: -2 }} whileTap={{ scale: 0.96 }}>
+              {socialLinks.map(({ Icon, label, href }) => (
+                <motion.span
+                  key={label}
+                  whileHover={{ scale: 1.08, y: -2 }}
+                  whileTap={{ scale: 0.96 }}
+                >
                   <Link
                     href={href}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-pt-muted transition duration-200 hover:border-pt-blue/50 hover:bg-white/[0.06] hover:text-white hover:shadow-[0_0_20px_-4px_rgba(49,100,211,0.4)]"
+                    className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/15 text-pt-muted transition duration-200 hover:border-pt-blue/50 hover:bg-white/[0.06] hover:text-white hover:shadow-[0_0_20px_-4px_rgba(49,100,211,0.4)]"
                     aria-label={label}
                   >
                     <Icon className="h-4 w-4" />

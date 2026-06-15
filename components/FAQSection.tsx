@@ -8,7 +8,7 @@ import { ptEase } from "@/lib/motion";
 const faqs = [
   {
     q: "How do I book a demo or discovery call?",
-    a: "Use the “Book a session” panel in the contact section: pick a time when our scheduling link is configured, request a Google Meet link, or email us directly. We’ll confirm details and send prep materials if needed.",
+    a: "Use the contact form below or email us directly—we’ll reply with times for a demo or discovery call and send prep materials if needed.",
   },
   {
     q: "What kinds of work does Parallax Technologies take on?",
@@ -42,9 +42,13 @@ export function FAQSection() {
   return (
     <section
       id="faq"
-      className="scroll-mt-24 border-t border-white/5 bg-pt-navy py-20 sm:py-24"
+      className="relative scroll-mt-24 overflow-hidden border-t border-white/5 bg-pt-navy/90 py-20 sm:py-24"
     >
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div
+        className="pointer-events-none absolute left-1/2 top-0 h-64 w-[480px] -translate-x-1/2 rounded-full bg-pt-blue/10 blur-[100px]"
+        aria-hidden
+      />
+      <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 12 }}
@@ -52,7 +56,7 @@ export function FAQSection() {
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.45, ease: ptEase }}
         >
-          <span className="inline-block rounded-full border border-pt-mint/40 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-pt-mint">
+          <span className="inline-block rounded-full border border-pt-mint/40 bg-pt-mint/5 px-4 py-1 text-xs font-semibold uppercase tracking-wide text-pt-mint shadow-[0_0_24px_-4px_rgba(121,216,165,0.35)]">
             FAQ
           </span>
           <h2 className="mt-4 text-3xl font-bold text-white sm:text-4xl">
@@ -71,8 +75,12 @@ export function FAQSection() {
                 key={item.q}
                 layout
                 initial={false}
-                className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-colors duration-300 hover:border-white/20"
-                whileHover={{ scale: 1.005 }}
+                className={`overflow-hidden rounded-2xl border bg-white/[0.03] transition-all duration-300 ${
+                  isOpen
+                    ? "border-pt-blue/40 shadow-[0_0_32px_-8px_rgba(49,100,211,0.45)]"
+                    : "border-white/10 hover:border-white/20 hover:bg-white/[0.05]"
+                }`}
+                whileHover={{ scale: 1.008 }}
                 transition={{ duration: 0.2 }}
               >
                 <button
@@ -84,7 +92,7 @@ export function FAQSection() {
                   {item.q}
                   <ChevronDown
                     className={`h-5 w-5 shrink-0 text-pt-muted transition-transform duration-300 ${
-                      isOpen ? "rotate-180" : ""
+                      isOpen ? "rotate-180 text-pt-mint" : ""
                     }`}
                     aria-hidden
                   />

@@ -8,22 +8,26 @@ import { FeaturedProjects } from "@/components/FeaturedProjects";
 import { FAQSection } from "@/components/FAQSection";
 import { ContactSection } from "@/components/ContactSection";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { SiteBackground } from "@/components/three/SiteBackground";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <main className="flex-1">
-        <Hero />
-        <Mission />
-        <ServicesGrid />
-        <TechStack />
-        <StatsBar />
-        <FeaturedProjects />
-        <FAQSection />
-        <ContactSection />
-      </main>
-      <ScrollToTop />
+      <SiteBackground />
+      <div className="relative z-10 flex min-h-full flex-1 flex-col">
+        <Navbar />
+        <main className="flex-1">
+          <Hero />
+          <ServicesGrid />
+          <TechStack />
+          <StatsBar />
+          <FeaturedProjects />
+          <Mission />
+          <FAQSection />
+          <ContactSection />
+        </main>
+        <ScrollToTop />
+      </div>
     </>
   );
 }
